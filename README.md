@@ -16,3 +16,8 @@ Now lets see all of these steps in detail and develop a Power BI dashboard from 
 - Data transformation and modeling  
 - Interactive visualizations  
 - End-to-end workflow  
+## Features
+- Power BI dashboard development
+- Data transformation and modeling
+- Interactive visualizations
+- End-to-end workflow
