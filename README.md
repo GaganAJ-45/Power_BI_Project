@@ -14,6 +14,7 @@
   
 ## You can download the resources used in this entire process from the above github csv files
 note: combine all the files make a folder as all_data
+## 1. Requirement Gathering
 1. Identify Stakeholders
 
 - Determine primary stakeholder and establish a point of contact who might be the domain experts or leaders who will eventually use the dashboard
@@ -86,6 +87,29 @@ Now for this project purposes we will mainly see below steps:
 3. Appending 2 Tables
 4. Replacing & trimming values
 
+There are many other transformation steps which you can apply like Pivot/Unpivot, Merge, Filtering etc. but for now we only need the above 3 steps. Let’s go!
+
+1. Renaming Columns
+
+While studying the data, I noticed that the Specialty column in Inpatient data is named as Specialty_Name, whereas in Outpatient it is named as just Specialty. So we will rename the Outpatient column to match with the Inpatient data. Make sure to name it exactly the same, otherwise it will create an issue in following steps.
+
+2. Rearranging Columns
+
+We will now rearrange our columns of the outpatient so that it matches with inpatient. You can just left click on the column header and drag it to the required position. Now while rearranging, I noticed that we have an additional column in Inpatient i.e. Case_Type which is missing from Outpatient. So lets create one additional column in Outpatient table called Case_Type by
+
+Go to Add Columns
+Click on Custom Columns
+Name the column as Case_Type
+Enter the formula =”Outpatient”
+Remember to place this new column at the same position as inpatients
+Appending Tables
+
+Now that both our tables have the same column structure, we can safely append them together. To do that come to Home tab and click on “Append Queries” button and click on “Append Queries as New”. Select 1st table as inpatient and 2nd table as outpatient. Rename this new table as “All_Data”. Finally click on “Close & Apply”.
+
+3. Appending Tables
+
+Observe that Age_Profile & Time_Band columns have some redundant data, so first use the Replace function button in power query to clean the data, for eg: “18+ months” and “18 month +”, both are the same, so replace either one to match the other. Secondly there are some trailing blanks in values of these columns so remove trailing blanks by using the Trim function button.
+
 Data Modelling
 
 - Data modelling is a way to create relationship with one table to another, so that we can fetch valuable information from them in our reporting layer.
@@ -106,7 +130,7 @@ Now you should see a line connecting both the tables and an arrow pointing towar
 For this project, I have already created a blueprint, however in live scenarios you will sit down with your team and create a wireframe of the required dashboard. You will then get this approved from the end stakeholder before starting your development activities.
 <img width="1536" height="682" alt="image-1-1536x682" src="https://github.com/user-attachments/assets/6cb9088e-bebc-4bbb-a8d9-489cf61fdf9e" />
 
-## 5 Dashboard Layout & Design
+## 5.Dashboard Layout & Design
 Now lets use DAX to create our measures which will be used in our visuals. For now we will create 2 measures for calculating Latest Month & Previous Year Wait List
 
 1. Latest Month Wait List = CALCULATE(SUM(All_Data[Total]),All_Data[Archive_Date] = MAX(All_Data[Archive_Date])) + 0
@@ -158,15 +182,18 @@ Now add interactivity in your dashboard like navigation buttons, chart alt displ
 ## 7 & 8 Testing and Sharing
 Ensure to conduct an extensive UAT session which will identify any bugs or data issues. After this you are ready to share your dashboard with a larger audience. Before sharing/publishing consider Row Level Security features within Power BI services. There is a detailed video on my Youtube channel, showing you how to setup the same.
 
-## 9 Routine Refresh & Maintenance
+## 9.Routine Refresh & Maintenance
 Hurraayyy, work is finally done. You can now focus on implementing a BAU process to run monthly refresh process and maintenance.
 
 ## These Are The Dashboard
 page 1
+
 <img width="1920" height="1140" alt="Screenshot 2025-09-21 155210" src="https://github.com/user-attachments/assets/1d3925d9-2436-4546-bc4f-72e6b5cb9588" />
 
 page 2
+
 <img width="1920" height="1140" alt="Screenshot 2025-09-21 155223" src="https://github.com/user-attachments/assets/4fa92aae-8d6f-47e6-ae9a-5bf2f1f8b6c3" />
 
 page 3
-<img width="1920" height="1200" alt="Screenshot 2025-09-21 160019" src="https://github.com/user-attachments/assets/5919c8b2-552d-4d89-9310-f973644dfeb9" />
+
+<img width="1905" height="942" alt="Screenshot 2025-09-21 160019" src="https://github.com/user-attachments/assets/c8cac17a-9036-485e-a306-4abc4189f107" />
