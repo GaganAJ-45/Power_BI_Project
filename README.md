@@ -1,5 +1,6 @@
-##                    End-End Power BI Dashboard Development
-![Project-Patient-Wait-List](https://github.com/user-attachments/assets/f1678a63-11dd-44dd-92e3-f3714d0fe41f)
+##                      End-End Power BI Dashboard Development
+<img width="1344" height="768" alt="generated-image" src="https://github.com/user-attachments/assets/053e4e1d-50eb-4f2d-a5dd-c7fd438418fc" />
+
 ##  The process of creating a dashboard in Power BI consist of following steps:  
 1. Requirement Gathering
 2. Data Collection
