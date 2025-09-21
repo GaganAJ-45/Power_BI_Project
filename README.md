@@ -64,8 +64,11 @@ There are over 200 different data connectors available to collect data inside po
 7. Sharepoint
 8. Web or JSON
 
+   
+steps by step to how connect to data source:
 1. Open Power BI desktop and click on GET DATA and select FOLDER option. Click Connect button at the bottom right
 ![unnamed](https://github.com/user-attachments/assets/d7b3d6e2-bc7c-43b7-9ea4-ef4707329a88)
+
 2. Now browse the folder path where we have stored all_data and press ok
 <img width="528" height="169" alt="unnamed" src="https://github.com/user-attachments/assets/8249a732-42fc-413d-8fe2-929fb751182b" />
 
