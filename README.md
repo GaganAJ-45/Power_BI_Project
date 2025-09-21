@@ -44,7 +44,7 @@ note: combine all the files make a folder as all_data
 3. Detailed specialty level & age profile analysis
 
 Data Scope
-2018 – 2021
+  2018 – 2021
 
 Metrics
 1.  Average & Median Waiting List
@@ -183,8 +183,7 @@ Finally in the line chart at the bottom use Total column directly along with the
 Now add interactivity in your dashboard like navigation buttons, chart alt display text and hovering info.
 
 ## 7 & 8 Testing and Sharing
-Ensure to conduct an extensive UAT session which will identify any bugs or data issues. After this you are ready to share your dashboard with a larger audience. Before sharing/publishing consider Row Level Security features within Power BI services. There is a detailed video on my Youtube channel, showing you how to setup the same.
-
+Ensure to conduct an extensive UAT session which will identify any bugs or data issues. After this you are ready to share your dashboard with a larger audience. Before sharing/publishing consider Row Level Security features within Power BI services.
 ## 9.Routine Refresh & Maintenance
 Hurraayyy, work is finally done. You can now focus on implementing a BAU process to run monthly refresh process and maintenance.
 
