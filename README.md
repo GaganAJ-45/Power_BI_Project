@@ -16,14 +16,14 @@
 ## You can download the resources used in this entire process from the above github csv files
 note: combine all the files make a folder as all_data
 ## 1. Requirement Gathering
-1. Identify Stakeholders
+### 1. Identify Stakeholders
 
 - Determine primary stakeholder and establish a point of contact who might be the domain experts or leaders who will eventually use the dashboard
 
-2. Understand Business Objectives 
+### 2. Understand Business Objectives 
 
 - Through meetings and calls  with stakeholders you should get an outline of Goals from the entire endeavor. Asking open ended questions will help you gain more insights to understand the data and how this dashboard will help achieve a specific business goa
-3. High Level Data Study
+### 3. High Level Data Study
 
 - A high level overview of data is required before you initiate discussions around scope, metrics and other granular topics. So here we will try to understand the data in terms of:
 
@@ -33,7 +33,7 @@ note: combine all the files make a folder as all_data
 4. Volume and frequency
 5. Data Quality – Missing Values or Anomalies
 
-4.Define Scope
+### 4.Define Scope
 
 - This is the perfect stage to discuss Key Metrics, KPIs & Deployment Timelines. Document the calculations, time frames & scope which will help in setting the expectations and avoiding any future disagreements. Also as a best practice remember to keep a 20% buffer while finalizing deadlines because it’s always better to over deliver after a standard commitment than to underdeliver after an extraordinary delivery pitch.
 
@@ -67,7 +67,7 @@ There are over 200 different data connectors available to collect data inside po
 8. Web or JSON
 
    
-steps by step to how connect to data source:
+### steps by step to how connect to data source:
 1. Open Power BI desktop and click on GET DATA and select FOLDER option. Click Connect button at the bottom right
 ![unnamed](https://github.com/user-attachments/assets/d7b3d6e2-bc7c-43b7-9ea4-ef4707329a88)
 
@@ -88,7 +88,7 @@ Now for this project purposes we will mainly see below steps:
 3. Appending 2 Tables
 4. Replacing & trimming values
 
-There are many other transformation steps which you can apply like Pivot/Unpivot, Merge, Filtering etc. but for now we only need the above 3 steps. Let’s go!
+### There are many other transformation steps which you can apply like Pivot/Unpivot, Merge, Filtering etc. but for now we only need the above 3 steps
 
 1. Renaming Columns
 
@@ -142,7 +142,7 @@ Now as per our design blueprint, insert these 2 measures in a card visual. After
 
 So enter a blank table from power bi and enter 2 row items manually i.e. Average & Median. Now with the newly created table create a button slicer, so that user can toggle between the two calculation.
 
-Now create below measures which will help us get the calculation we need and also to make few chart titles dynamic
+### Now create below measures which will help us get the calculation we need and also to make few chart titles dynamic
 
 1. Median Wait List = MEDIAN(All_Data[Total]) 
 
@@ -156,23 +156,23 @@ Now create below measures which will help us get the calculation we need and als
 
 6. NoDataRight = IF(ISBLANK(CALCULATE(SUM(All_Data[Total]),All_Data[Case_Type]="Outpatient")),"No data for selected criteria","")
    
-* Summary Page
+### Summary Page
 
 Now place the charts based on our blueprint i.e doughnut, clustered column chart & top five Multi Row card. And remember to use the new measure which is Avg/Med Wait List in the values section.
 
 Finally in the line chart at the bottom use Total column directly along with the Archive_Date. Remember to add a visual filter for Case_Type. So one chart will show Day Case & Inpatients and the other chart will show Outpatients. Add slicers for Archive_Date, Case_Type and Specialty.
 
-* Detailed View
+### Detailed View
 
 - Add a new page here add a matrix view using the Archive_Date, Specialty_Name, Age_Profile, Time_Bands, Case_Type and Total.
 
-* Tooltip Page
+### Tooltip Page
 
 - Create a new page which will be used as a tooltip. Add a chart to show Specialty and Total waitlist. Also add a card to show the Total sum of Wait List. Now set this page as tooltip by going to formatting >> Page Information >> Enable Allow Use as Tooltip
 
 - Now go back to summary page and select the line chart. General section of formatting, go to Tooltips and select the page i.e. the new tooltip page.
 
-* Beautify the Dashboard
+### Beautify the Dashboard
 
 - This is very subjective but I usually go to Google or Adobe Stock website to draw inspiration. Once you have selected a dashboard as your inspiration. Go to Color.Adobe.com to extract the colors from your reference dashboard. Keep a note of these colors somewhere.
 
@@ -188,16 +188,16 @@ Ensure to conduct an extensive UAT session which will identify any bugs or data 
 Hurraayyy, work is finally done. You can now focus on implementing a BAU process to run monthly refresh process and maintenance.
 
 ## These Are The Dashboard
-page 1
+### page 1
 
 <img width="1920" height="1140" alt="Screenshot 2025-09-21 155210" src="https://github.com/user-attachments/assets/1d3925d9-2436-4546-bc4f-72e6b5cb9588" />
 
 
-page 2
+### page 2
 
 <img width="1920" height="1140" alt="Screenshot 2025-09-21 155223" src="https://github.com/user-attachments/assets/4fa92aae-8d6f-47e6-ae9a-5bf2f1f8b6c3" />
 
 
-page 3
+### page 3
 
 <img width="1905" height="942" alt="Screenshot 2025-09-21 160019" src="https://github.com/user-attachments/assets/c8cac17a-9036-485e-a306-4abc4189f107" />
