@@ -111,14 +111,14 @@ Now that both our tables have the same column structure, we can safely append th
 
 Observe that Age_Profile & Time_Band columns have some redundant data, so first use the Replace function button in power query to clean the data, for eg: “18+ months” and “18 month +”, both are the same, so replace either one to match the other. Secondly there are some trailing blanks in values of these columns so remove trailing blanks by using the Trim function button.
 
-Data Modelling
+* Data Modelling
 
 - Data modelling is a way to create relationship with one table to another, so that we can fetch valuable information from them in our reporting layer.
 - Lets jump into the Data Modelling View, which is located at the left hand panel on Power BI.
 
-We will be using All_Data from now onwards, so we can safely hide inpatient and outpatient data. We can also stop it from loading into the data model by disabling it from the power query editor. Just right click on the table name in power query and uncheck Enable Load.
+- We will be using All_Data from now onwards, so we can safely hide inpatient and outpatient data. We can also stop it from loading into the data model by disabling it from the power query editor. Just right click on the table name in power query and uncheck Enable Load.
 
-Now since specialty name is one of the key attributes that we are looking in this project, lets focus on that column now. As you have seen in the data, we have a huge number of specialty available and using all of them in our report layer directly will create a clutter in our visualization. A better approach would be to distribute them in buckets. So to do this I have created a specialty mapping file which you will find in the downloaded resources. Lets import that file in power bi to create the relationship with All_Data.
+- Now since specialty name is one of the key attributes that we are looking in this project, lets focus on that column now. As you have seen in the data, we have a huge number of specialty available and using all of them in our report layer directly will create a clutter in our visualization. A better approach would be to distribute them in buckets. So to do this I have created a specialty mapping file which you will find in the downloaded resources. Lets import that file in power bi to create the relationship with All_Data.
 
 Once you import this file, Power BI should auto detect relationship and connect both the tables. However if it does not then you can do it manually by following below steps:
 
@@ -155,27 +155,27 @@ Now create below measures which will help us get the calculation we need and als
 5. NoDataLeft = IF(ISBLANK(CALCULATE(SUM(All_Data[Total]),All_Data[Case_Type]<>"Outpatient")),"No data for selected criteria","")  
 
 6. NoDataRight = IF(ISBLANK(CALCULATE(SUM(All_Data[Total]),All_Data[Case_Type]="Outpatient")),"No data for selected criteria","")  
-Summary Page
+* Summary Page
 
 Now place the charts based on our blueprint i.e doughnut, clustered column chart & top five Multi Row card. And remember to use the new measure which is Avg/Med Wait List in the values section.
 
 Finally in the line chart at the bottom use Total column directly along with the Archive_Date. Remember to add a visual filter for Case_Type. So one chart will show Day Case & Inpatients and the other chart will show Outpatients. Add slicers for Archive_Date, Case_Type and Specialty.
 
-Detailed View
+* Detailed View
 
-Add a new page here add a matrix view using the Archive_Date, Specialty_Name, Age_Profile, Time_Bands, Case_Type and Total.
+- Add a new page here add a matrix view using the Archive_Date, Specialty_Name, Age_Profile, Time_Bands, Case_Type and Total.
 
-Tooltip Page
+* Tooltip Page
 
-Create a new page which will be used as a tooltip. Add a chart to show Specialty and Total waitlist. Also add a card to show the Total sum of Wait List. Now set this page as tooltip by going to formatting >> Page Information >> Enable Allow Use as Tooltip
+- Create a new page which will be used as a tooltip. Add a chart to show Specialty and Total waitlist. Also add a card to show the Total sum of Wait List. Now set this page as tooltip by going to formatting >> Page Information >> Enable Allow Use as Tooltip
 
-Now go back to summary page and select the line chart. General section of formatting, go to Tooltips and select the page i.e. the new tooltip page.
+- Now go back to summary page and select the line chart. General section of formatting, go to Tooltips and select the page i.e. the new tooltip page.
 
-Beautify the Dashboard
+* Beautify the Dashboard
 
-This is very subjective but I usually go to Google or Adobe Stock website to draw inspiration. Once you have selected a dashboard as your inspiration. Go to Color.Adobe.com to extract the colors from your reference dashboard. Keep a note of these colors somewhere.
+- This is very subjective but I usually go to Google or Adobe Stock website to draw inspiration. Once you have selected a dashboard as your inspiration. Go to Color.Adobe.com to extract the colors from your reference dashboard. Keep a note of these colors somewhere.
 
-Now you can go to PowerPoint or Canva to design the background of your dashboard. You can play around as much as you like using the colors and different shapes. Once done extract your design as png file and use that image as a background for your Power BI canvas.
+- Now you can go to PowerPoint or Canva to design the background of your dashboard. You can play around as much as you like using the colors and different shapes. Once done extract your design as png file and use that image as a background for your Power BI canvas.
 
 ## 6.Adding Interactivity
 Now add interactivity in your dashboard like navigation buttons, chart alt display text and hovering info.
