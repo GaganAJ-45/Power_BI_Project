@@ -44,7 +44,7 @@ note: combine all the files make a folder as all_data
 3. Detailed specialty level & age profile analysis
 
 Data Scope
-  2018 – 2021
+  (2018 – 2021)
 
 Metrics
 1.  Average & Median Waiting List
@@ -111,7 +111,7 @@ Now that both our tables have the same column structure, we can safely append th
 
 Observe that Age_Profile & Time_Band columns have some redundant data, so first use the Replace function button in power query to clean the data, for eg: “18+ months” and “18 month +”, both are the same, so replace either one to match the other. Secondly there are some trailing blanks in values of these columns so remove trailing blanks by using the Trim function button.
 
-* Data Modelling
+### Data Modelling
 
 - Data modelling is a way to create relationship with one table to another, so that we can fetch valuable information from them in our reporting layer.
 - Lets jump into the Data Modelling View, which is located at the left hand panel on Power BI.
@@ -192,9 +192,11 @@ page 1
 
 <img width="1920" height="1140" alt="Screenshot 2025-09-21 155210" src="https://github.com/user-attachments/assets/1d3925d9-2436-4546-bc4f-72e6b5cb9588" />
 
+
 page 2
 
 <img width="1920" height="1140" alt="Screenshot 2025-09-21 155223" src="https://github.com/user-attachments/assets/4fa92aae-8d6f-47e6-ae9a-5bf2f1f8b6c3" />
+
 
 page 3
 
