@@ -101,3 +101,72 @@ Once you import this file, Power BI should auto detect relationship and connect 
 2. Click on Specialty_Name column in All_Data
 3. Drag this column over the Specialty column in Mapping table
 Now you should see a line connecting both the tables and an arrow pointing towards All_Data from Mapping table. This means that we have created a relationship between both the tables. The arrow signifies the filter context and tells you that now you can use columns from Mapping table to filter data in All_Data.
+
+## 4.Visualization Blueprint
+For this project, I have already created a blueprint, however in live scenarios you will sit down with your team and create a wireframe of the required dashboard. You will then get this approved from the end stakeholder before starting your development activities.
+<img width="1536" height="682" alt="image-1-1536x682" src="https://github.com/user-attachments/assets/6cb9088e-bebc-4bbb-a8d9-489cf61fdf9e" />
+
+## 5 Dashboard Layout & Design
+Now lets use DAX to create our measures which will be used in our visuals. For now we will create 2 measures for calculating Latest Month & Previous Year Wait List
+
+1. Latest Month Wait List = CALCULATE(SUM(All_Data[Total]),All_Data[Archive_Date] = MAX(All_Data[Archive_Date])) + 0
+
+2. PY Latest Month Wait List = CALCULATE(SUM(All_Data[Total]),All_Data[Archive_Date]= EDATE(MAX(All_Data[Archive_Date]),-12)) + 0
+ 
+Now as per our design blueprint, insert these 2 measures in a card visual. After this create a blank table where we will store calculation method headers, i.e. in our dashboard we want to show Average values and Median values.
+
+So enter a blank table from power bi and enter 2 row items manually i.e. Average & Median. Now with the newly created table create a button slicer, so that user can toggle between the two calculation.
+
+Now create below measures which will help us get the calculation we need and also to make few chart titles dynamic
+
+1. Median Wait List = MEDIAN(All_Data[Total]) 
+
+2. Average Wait List = AVERAGE(All_Data[Total]) 
+
+3. Avg/Med Wait List = SWITCH(VALUES('Calculation Method'[Calc Method]),"Average",[Average Wait List],"Median",[Median Wait List]) 
+
+4. Dynamic Title = SWITCH(VALUES('Calculation Method'[Calc Method]),"Average","Key Indicators - Patient Wait List (Average)","Median","Key Indicators - Patient Wait List (Median)") 
+
+5. NoDataLeft = IF(ISBLANK(CALCULATE(SUM(All_Data[Total]),All_Data[Case_Type]<>"Outpatient")),"No data for selected criteria","")  
+
+6. NoDataRight = IF(ISBLANK(CALCULATE(SUM(All_Data[Total]),All_Data[Case_Type]="Outpatient")),"No data for selected criteria","")  
+Summary Page
+
+Now place the charts based on our blueprint i.e doughnut, clustered column chart & top five Multi Row card. And remember to use the new measure which is Avg/Med Wait List in the values section.
+
+Finally in the line chart at the bottom use Total column directly along with the Archive_Date. Remember to add a visual filter for Case_Type. So one chart will show Day Case & Inpatients and the other chart will show Outpatients. Add slicers for Archive_Date, Case_Type and Specialty.
+
+Detailed View
+
+Add a new page here add a matrix view using the Archive_Date, Specialty_Name, Age_Profile, Time_Bands, Case_Type and Total.
+
+Tooltip Page
+
+Create a new page which will be used as a tooltip. Add a chart to show Specialty and Total waitlist. Also add a card to show the Total sum of Wait List. Now set this page as tooltip by going to formatting >> Page Information >> Enable Allow Use as Tooltip
+
+Now go back to summary page and select the line chart. General section of formatting, go to Tooltips and select the page i.e. the new tooltip page.
+
+Beautify the Dashboard
+
+This is very subjective but I usually go to Google or Adobe Stock website to draw inspiration. Once you have selected a dashboard as your inspiration. Go to Color.Adobe.com to extract the colors from your reference dashboard. Keep a note of these colors somewhere.
+
+Now you can go to PowerPoint or Canva to design the background of your dashboard. You can play around as much as you like using the colors and different shapes. Once done extract your design as png file and use that image as a background for your Power BI canvas.
+
+## 6.Adding Interactivity
+Now add interactivity in your dashboard like navigation buttons, chart alt display text and hovering info.
+
+## 7 & 8 Testing and Sharing
+Ensure to conduct an extensive UAT session which will identify any bugs or data issues. After this you are ready to share your dashboard with a larger audience. Before sharing/publishing consider Row Level Security features within Power BI services. There is a detailed video on my Youtube channel, showing you how to setup the same.
+
+## 9 Routine Refresh & Maintenance
+Hurraayyy, work is finally done. You can now focus on implementing a BAU process to run monthly refresh process and maintenance.
+
+## These Are The Dashboard
+page 1
+<img width="1920" height="1140" alt="Screenshot 2025-09-21 155210" src="https://github.com/user-attachments/assets/1d3925d9-2436-4546-bc4f-72e6b5cb9588" />
+
+page 2
+<img width="1920" height="1140" alt="Screenshot 2025-09-21 155223" src="https://github.com/user-attachments/assets/4fa92aae-8d6f-47e6-ae9a-5bf2f1f8b6c3" />
+
+page 3
+<img width="1920" height="1200" alt="Screenshot 2025-09-21 160019" src="https://github.com/user-attachments/assets/5919c8b2-552d-4d89-9310-f973644dfeb9" />
