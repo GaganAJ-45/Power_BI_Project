@@ -187,7 +187,8 @@ Ensure to conduct an extensive UAT session which will identify any bugs or data 
 ## 9.Routine Refresh & Maintenance
 Hurraayyy, work is finally done. You can now focus on implementing a BAU process to run monthly refresh process and maintenance.
 
-## These Are The Dashboard
+## These Are The Three pages of Dashboard
+
 ### page 1
 
 <img width="1920" height="1140" alt="Screenshot 2025-09-21 155210" src="https://github.com/user-attachments/assets/1d3925d9-2436-4546-bc4f-72e6b5cb9588" />
