@@ -16,3 +16,21 @@
 1. Identify Stakeholders
 
 - Determine primary stakeholder and establish a point of contact who might be the domain experts or leaders who will eventually use the dashboard
+
+2. Understand Business Objectives 
+
+- Through meetings and calls  with stakeholders you should get an outline of Goals from the entire endeavor. Asking open ended questions will help you gain more insights to understand the data and how this dashboard will help achieve a specific business goa
+3. High Level Data Study
+
+- A high level overview of data is required before you initiate discussions around scope, metrics and other granular topics. So here we will try to understand the data in terms of:
+
+1. Data Sources
+2. Column Description
+3. Data Type
+4. Volume and frequency
+5. Data Quality – Missing Values or Anomalies
+
+4.Define Scope
+
+- This is the perfect stage to discuss Key Metrics, KPIs & Deployment Timelines. Document the calculations, time frames & scope which will help in setting the expectations and avoiding any future disagreements. Also as a best practice remember to keep a 20% buffer while finalizing deadlines because it’s always better to over deliver after a standard commitment than to underdeliver after an extraordinary delivery pitch.
+  
