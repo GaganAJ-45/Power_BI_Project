@@ -154,7 +154,8 @@ Now create below measures which will help us get the calculation we need and als
 
 5. NoDataLeft = IF(ISBLANK(CALCULATE(SUM(All_Data[Total]),All_Data[Case_Type]<>"Outpatient")),"No data for selected criteria","")  
 
-6. NoDataRight = IF(ISBLANK(CALCULATE(SUM(All_Data[Total]),All_Data[Case_Type]="Outpatient")),"No data for selected criteria","")  
+6. NoDataRight = IF(ISBLANK(CALCULATE(SUM(All_Data[Total]),All_Data[Case_Type]="Outpatient")),"No data for selected criteria","")
+   
 * Summary Page
 
 Now place the charts based on our blueprint i.e doughnut, clustered column chart & top five Multi Row card. And remember to use the new measure which is Avg/Med Wait List in the values section.
@@ -177,6 +178,7 @@ Finally in the line chart at the bottom use Total column directly along with the
 
 - Now you can go to PowerPoint or Canva to design the background of your dashboard. You can play around as much as you like using the colors and different shapes. Once done extract your design as png file and use that image as a background for your Power BI canvas.
 
+* TIP: I Have Created Dashboard Background for all three pages check in the slide(1/2/3).
 ## 6.Adding Interactivity
 Now add interactivity in your dashboard like navigation buttons, chart alt display text and hovering info.
 
